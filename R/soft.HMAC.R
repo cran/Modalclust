@@ -48,8 +48,9 @@ n=dim(dat)[1];
 m=dim(dat)[2];
 
 
-  scale.dat=sd(dat)
-  Data=scale(dat,scale=sd(dat),center=FALSE)
+  #scale.dat=sd(dat)
+  scale.dat=apply(dat,2,sd)
+  Data=scale(dat,scale=scale.dat,center=FALSE)
 
   n.cluster=hmacobj$n.cluster[min(which(hmacobj$level==level))]
   member=hmacobj$membership[[level]]

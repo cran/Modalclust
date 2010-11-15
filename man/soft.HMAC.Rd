@@ -26,7 +26,7 @@ The specified number of clusters. If neither \code{level} nor
 \code{n.cluster} is specified, soft clustering output is shown for each level.
 }
 	\item{boundlevel}{ 
-Posterior probability threshold. Points havings posterior probability below \code{boundlevel} are assigned as boundary points and colored in gray. Default value is 0.4.
+Posterior probability threshold. Points having posterior probability below \code{boundlevel} are assigned as boundary points and colored in gray. Default value is 0.4.
 }
 	\item{plot}{
 Get the two dimensional plot of the clusters with different

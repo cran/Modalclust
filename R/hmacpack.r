@@ -1,11 +1,10 @@
-
 hmac=function(dat,Sigmas,G=NULL,member=NULL)
 {    
 	library(mvtnorm);library(zoo)
        dat=as.matrix(dat)
 	n=nrow(dat);m=ncol(dat);
-	s_hat=sd(dat);
- 
+	#s_hat=sd(dat);
+ 	s_hat=apply(dat,2,sd)
        if(is.null(G)) G=dat
        if(is.null(member)) member=seq(n)
         
@@ -75,9 +74,11 @@ phmac=function(dat,length=10,npart=1,parallel=TRUE,sigmaselect=NULL,G=NULL)
 {
 
 ### Sigma  
-  	scale.dat=sd(dat)
-  	Data=scale(dat,scale=sd(dat),center=FALSE)
-
+  	#scale.dat=sd(dat)
+  	scale.dat=apply(dat,2,sd)
+	#Data=scale(dat,scale=sd(dat),center=FALSE)
+	Data=scale(dat,scale=scale.dat,center=FALSE)
+	
     	library(mvtnorm);library(zoo)
     	if (!is.matrix(Data)) Data=as.matrix(Data)
        n=dim(Data)[1];
@@ -190,4 +191,3 @@ mydmvnorm <- function (x, mean, sigmasq){
     	logretval <- -(ncol(x)*(log(2 * pi) + log(sigmasq)) + distval)/2
     	return(exp(logretval))
 }
-

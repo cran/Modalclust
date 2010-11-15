@@ -60,7 +60,7 @@ for(i in 2:n)
 
 
 #x=1:n
-plot(1,1,type="n",xlim=range(x),ylim=c((level-0.5),nlevels),xaxt="n",yaxt="n",bty="n",xlab="",ylab="clustering level",main="HMAC Dendogram")
+plot(1,1,type="n",xlim=range(x),ylim=c((level-0.5),nlevels),xaxt="n",yaxt="n",bty="n",xlab="",ylab="clustering level",main="HMAC Dendrogram")
 yxis=c(hmacobj$level,max(hmacobj$level)+1)
 axis(2, at=yxis,labels=yxis, col.axis="black", las=2)
 

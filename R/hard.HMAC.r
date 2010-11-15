@@ -44,7 +44,10 @@ if(level> max(hmacobj$level) ) stop ("Provide a level not greater than ", max(hm
 hmacobj$dat=as.matrix(hmacobj$dat)
 if(plot==TRUE){
 if(dim(hmacobj$dat)[2]==1){
-plot(density(hmacobj$dat,bw=sd(hmacobj$dat)*min(hmacobj$sigmas[which(level==hmacobj$level)])),main="",xlab="Data")
+#plot(density(hmacobj$dat,bw=sd(hmacobj$dat)*min(hmacobj$sigmas[which(level==hmacobj$level)])),main="",xlab="Data")
+plot(density(hmacobj$dat,bw=apply(hmacobj$dat,2,sd)*min(hmacobj$sigmas[which(level==hmacobj$level)])),main="",xlab="Data")
+
+
 for(k in 1:max(unique(member))){
 	points(hmacobj$dat[member==k],rep(0,sum(member==k)),pch="|",col=k,main=NULL)
 	}
