@@ -148,6 +148,8 @@ phmac=function(dat,length=10,npart=1,parallel=TRUE,sigmaselect=NULL,G=NULL)
 }
 
 
+modalclust <- phmac
+
 
 ### This program will be used to obtain the correct Sigma's fpr model clustering
 sdofnorm<-function(h,p){

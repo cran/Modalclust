@@ -27,8 +27,8 @@ Colors used to represent different clusters.
 The specified level that dendrogram starts. Default value is 1.
   }
    	\item{n.cluster}{
-The specified number of clusters. If neither \code{level} or
-\code{n.cluster} are specified the full tree is plotted.
+The specified number of clusters. If neither \code{level} nor
+\code{n.cluster} is specified, the full tree is plotted.
 }
 
   

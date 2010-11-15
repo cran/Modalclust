@@ -1,6 +1,7 @@
 \name{phmac}
 \Rdversion{1.1}
 \alias{phmac}
+\alias{modalclust}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Main function for performing Modal Clusters  either parallel or serial mode. 
@@ -10,6 +11,8 @@ Performing Modal Clustering
 }
 \usage{
 phmac(dat, length = 10, npart = 1, parallel = TRUE, sigmaselect = NULL,
+G= NULL)
+modalclust(dat, length = 10, npart = 1, parallel = TRUE, sigmaselect = NULL,
 G= NULL)
 
 }

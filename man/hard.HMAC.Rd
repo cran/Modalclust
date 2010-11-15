@@ -22,8 +22,8 @@ The output of HMAC analysis. An object of class 'hmac'.
     The specified level of HMAC output
   }
    	\item{n.cluster}{
-The specified number of clusters. If neither \code{level} or
-\code{n.cluster} are specified, hard clustering output is shown for each level.
+The specified number of clusters. If neither \code{level} nor
+\code{n.cluster} is specified, hard clustering output is shown for each level.
 }
 
      	

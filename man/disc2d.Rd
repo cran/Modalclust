@@ -1,3 +1,4 @@
+
 \name{disc2d}
 \Rdversion{0.1}
 \alias{disc2d}
