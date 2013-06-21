@@ -108,13 +108,12 @@ phmac=function(dat,length=10,npart=1,parallel=TRUE,sigmaselect=NULL,G=NULL)
         else cat("Performing initial Modal clustering")
         if(parallel){
         
-          if(require(multicore)){
+          if(require(parallel)){
             if(npart>1) cat("Using parallel computing for performing initial Modal clustering \n")
-            jobs <- lapply(1:npart, function(x) multicore::parallel(hmac(data.split[[x]],Sigmas=Sigmas[1]), name=x))
-            split.hmac<-collect(jobs)
-          }
+            split.hmac <- mclapply(1:npart, function(x) hmac(data.split[[x]],Sigmas=Sigmas[1]), mc.cores=npart)
+                      }
           else{
-            cat("Use library multicore to run hmac in several processors ")  
+            cat("Use library parallel to run hmac in several processors ")  
             split.hmac=lapply(data.split,hmac,Sigmas=Sigmas[1])
           }
         }

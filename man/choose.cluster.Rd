@@ -53,8 +53,9 @@ data(disc2d.hmac)
 choose.cluster(disc2d.hmac,x=c(0,0),level=3)
 choose.cluster(disc2d.hmac,x=c(0,0),n.cluster=2)
 
-#Users can choose anypoint they want by clicking the point in the plot after the following command. 
-#choose.cluster(disc2d.hmac,level=3)
+# Users can choose anypoint they want by clicking the point 
+# in the plot after the following command. 
+# choose.cluster(disc2d.hmac,level=3)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

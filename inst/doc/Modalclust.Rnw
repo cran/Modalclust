@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage{url}
 %\VignetteIndexEntry{Model based clustering via mode identification}
-%\VignetteDepends{mvtnorm, zoo, multicore, class}
+%\VignetteDepends{mvtnorm, zoo, parallel, class}
 \usepackage{Sweave}
 \addtolength\topmargin{-1in}
 \addtolength\textheight{1.5in}
@@ -110,7 +110,8 @@ To partition the dataset into 4 partitions and to run
   them  in parallel in 4  processor one should use 
   
 <<>>=
-disc2d.phmac=phmac(disc2d,npart=4,parallel=T) #npart can be made equal to the number of processors the computer has.
+disc2d.phmac=phmac(disc2d,npart=4,parallel=T) 
+          #npart can be made equal to the number of processors the computer has.
 @
 
 Note that the  output of the parallel and the non-parallel version will be
@@ -153,7 +154,8 @@ having 2 big clusters and 4 sub clusters. This hierarchical layer is visible in
 the following graph. Note that one of the subclass was not separable as their modes merged the two clusters.
 <<fig=TRUE,height=6,width=12>>=
 set.seed(20)
-mix4=data.frame(rbind(rmvnorm(20,rep(0,4)), rmvnorm(20,rep(2,4)),rmvnorm(20,rep(10,4)),rmvnorm(20,rep(13,4))))
+mix4=data.frame(rbind(rmvnorm(20,rep(0,4)), rmvnorm(20,rep(2,4)),
+                      rmvnorm(20,rep(10,4)),rmvnorm(20,rep(13,4))))
 mix4.hmac=phmac(mix4,npart=1)
 plot(mix4.hmac)
 @ 

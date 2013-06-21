@@ -63,7 +63,7 @@ No. 2, page 983--1006, 2008.
 data(disc2d.hmac)
 # disc2d.hmac is the output of phmac(disc2d,npart=1)
 
-contour.hmac(disc2d.hmac,level=3,col=gray(0.7))
+contour.hmac(disc2d.hmac,level=3,col=gray(0.7)) 
 
 # Provide contour line at probability density 0.05.
 contour(disc2d.hmac,n.cluster=2,prob=0.05) 
