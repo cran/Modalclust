@@ -1,12 +1,13 @@
-89f76cc517acc79d585c0ea1c4b0c40a *DESCRIPTION
-9311336212c57d76984fe493b089981f *NAMESPACE
-14cdab21deafbe5b30f1281a1fdbd0fb *R/choose.cluster.R
-bfeeb8c46c730397e6857d977731f6ab *R/contourHMAC.R
+53a7b5a112d059e88025b65c9399d28c *DESCRIPTION
+766fabc6cc61bf403f281615d0da79eb *NAMESPACE
+6e3411a78ef9f008ff07d9519f55b59d *R/choose.cluster.R
+1f3a35cd3f34efb8206e6f2ce8d8d9ab *R/contourHMAC.R
 17caa3a5f8b4c8c962f86bcf91d63e54 *R/hard.HMAC.r
-bb65e9dbd87891940db440eaf9993550 *R/hmacpack.r
+e1e85e53e9475d55eef4c8351f2872c0 *R/hmacpack.r
 1131fbefaeae4af4723ec5b777cc5c88 *R/plot.HMAC.R
-abfcbe39e6fe833cf228f114512bde27 *R/soft.HMAC.R
+5a18d4dfb278cbbb960d77c0bebd7fee *R/soft.HMAC.R
 d4894ab11f7e1fe4cfad7381da4bdaa1 *R/summary_hmac.r
+b41a086da1044398b934b387cddc82ea *build/vignette.rds
 726b3984ac5b19f2bbfe7271727f52b9 *data/cta20.hmac.rda
 800a9746bd3d7fd1d6bb1c13c61d0d31 *data/cta20.rda
 56828013b48e555b393d4a19f72b23a0 *data/disc2d.hmac.rda
@@ -22,7 +23,7 @@ c58e563fc6d004f032bf9a17eea2c821 *demo/modalclust.R
 5af39962c47c9fca1c883603011eecc5 *demo/plotmodalclust.R
 20c73089c5da028234470f9ebf719f04 *inst/doc/Modalclust.R
 39fb3d904ccdc1f608c9f2abeb5ecab8 *inst/doc/Modalclust.Rnw
-c80be83526337aadb63656bb0aec9e81 *inst/doc/Modalclust.pdf
+9ec06eea777b96735deec6fc9ccca19d *inst/doc/Modalclust.pdf
 8cf292087b66ed032bf1882697a56337 *man/HMAC.Rd
 02cd012245f8a1ee71cc274d0fc480d7 *man/choose.cluster.Rd
 96264c26d6382e03b611140b78628e96 *man/contourHMAC.Rd
@@ -37,3 +38,4 @@ dc463e193d4530dae81191db058c7bd4 *man/oned.Rd
 c39ec0938cf32a09e60ed6823eff0f03 *man/plot.hmac.Rd
 71694483c1b70ddddb0b2c5cac27b11c *man/soft.HMAC.Rd
 ea74e23212aac05bd077a833d0990131 *man/summary.hmac.Rd
+39fb3d904ccdc1f608c9f2abeb5ecab8 *vignettes/Modalclust.Rnw

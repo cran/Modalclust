@@ -3,17 +3,17 @@ contour.hmac=function(x, n.cluster=NULL,level=NULL,prob=NULL,smoothplot=FALSE,..
   ### 2d plot of hmac objects
 
  hmacobj=x
- 
+
 if(!dim(as.matrix(hmacobj$dat))[2]==2) stop("Contour plot not possible with more than two dimensions \n")
 
 
-  require(MASS)
+
 if(is.null(level) & is.null(n.cluster)){
  stop("provide either the level or the number of clusters")}
 
-if(is.null(level) & !is.null(n.cluster)){  
+if(is.null(level) & !is.null(n.cluster)){
  levels=hmacobj$level[which(hmacobj$n.cluster>=n.cluster)]
- 
+
 #### Possibility of adjustment of number of clusters get from MG's code
  if(length(levels)==0){
    stop("Cannot find a level with ", n.cluster," clusters \n Choose the number of clusters between ",
@@ -29,7 +29,7 @@ else {
      cat("The level at which there are",hmacobj$n.cluster[min(which(hmacobj$level==level))],"clusters is", level,"\n")
    }
 
-   
+
  }}
 
 if(level> max(hmacobj$level) ) stop ("Provide a level not greater than ", max(hmacobj$level))
