@@ -76,7 +76,7 @@ disc2d.hmac=phmac(disc2d,npart=1)
 plot.hmac(disc2d.hmac,level=2)
 
 ## For parallel implementation
-disc2d.hmac.parallel=phmac(disc2d,npart=4,parallel=TRUE)
+disc2d.hmac.parallel=phmac(disc2d,npart=2,parallel=TRUE)
 
 soft.hmac(disc2d.hmac,level=2)
 soft.hmac(disc2d.hmac,n.cluster=3)

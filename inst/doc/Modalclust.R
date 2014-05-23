@@ -17,7 +17,7 @@ disc2d.hmac=phmac(disc2d,npart=1,parallel=F)
 ###################################################
 ### code chunk number 3: Modalclust.Rnw:112-114
 ###################################################
-disc2d.phmac=phmac(disc2d,npart=4,parallel=T) 
+disc2d.phmac=phmac(disc2d,npart=2,parallel=T) 
           #npart can be made equal to the number of processors the computer has.
 
 

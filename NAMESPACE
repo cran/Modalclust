@@ -8,6 +8,5 @@ exportPattern(".")
 import(
   mvtnorm,
   zoo,
-  class,
-MASS
+  class
 )

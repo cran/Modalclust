@@ -9,10 +9,10 @@ if(!dim(as.matrix(hmacobj$dat))[2]==2) stop("Choosing cluster not possible with 
 
 if(is.null(level) & is.null(n.cluster)){
  stop("provide either the level or the number of clusters")}
-if(is.null(level) & !is.null(n.cluster)){
+if(is.null(level) & !is.null(n.cluster)){  
  levels=hmacobj$level[which(hmacobj$n.cluster>=n.cluster)]
-
-
+ 
+ 
 #### Possibility of adjustment of number of clusters get from MG's code
  if(length(levels)==0){
    stop("Cannot find a level with ", n.cluster," clusters \n Choose the number of clusters between ",
@@ -27,10 +27,9 @@ if(is.null(level) & !is.null(n.cluster)){
    else{
      cat("There are no levels with exactly",n.cluster,"clusters\n")
      cat("The level at which there are",hmacobj$n.cluster[min(which(hmacobj$level==level))],"clusters is", level,"\n")
-   }
+   }   
 }}
 if(level> max(hmacobj$level) ) stop ("Provide a level not greater than ", max(hmacobj$level))
-
 
 
     plot(hmacobj$data,col="gray",pch=16)
@@ -51,7 +50,7 @@ while(more){
 
 
 	if(x[1]<min(hmacobj$data[,1]) | x[1]> max(hmacobj$data[,1]) | x[2]<min(hmacobj$data[,2]) | x[2]> max(hmacobj$data[,2]) )  break
-
+ 
 	myclass=knn(hmacobj$data,x,hmacobj$membership[[level]],k=10)
 	points(hmacobj$data[hmacobj$membership[[level]]==myclass,],col=k+1,pch=16)
 

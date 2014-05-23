@@ -95,22 +95,22 @@ disc2d.hmac=phmac(disc2d,npart=1,parallel=F)
 @
 
 On the other hand one can use the parallel mode to cluster the same
-data. To partition the dataset into 4 partitions and to run
+data. To partition the dataset into 2 partitions and to run
   them sequentially in a single processor one can use 
   
 
 \begin{verbatim}
-> disc2d.part=phmac(disc2d,npart=4,parallel=F)
+> disc2d.part=phmac(disc2d,npart=2,parallel=F)
 \end{verbatim}
   
  
 
 \noindent  
-To partition the dataset into 4 partitions and to run
-  them  in parallel in 4  processor one should use 
+To partition the dataset into 2 partitions and to run
+  them  in parallel in 2  processor one should use 
   
 <<>>=
-disc2d.phmac=phmac(disc2d,npart=4,parallel=T) 
+disc2d.phmac=phmac(disc2d,npart=2,parallel=T) 
           #npart can be made equal to the number of processors the computer has.
 @
 

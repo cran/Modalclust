@@ -5,7 +5,7 @@
 soft.hmac <- function(hmacobj,n.cluster=NULL,level=NULL,boundlevel=0.4,plot=TRUE){
 if(class(hmacobj)!="hmac") stop (" Your object is not of class hmac")
 if(is.null(level)+is.null(n.cluster)+(plot!="TRUE")==3) level=1
-if(is.null(level) & is.null(n.cluster)){
+if(is.null(level) & is.null(n.cluster)){ 
 par(ask=TRUE)
 cat("As no specific level is specified plots are provided for all levels",unique(hmacobj$level),"\n\n")
 for(i in 1:max(hmacobj$level)){
@@ -16,14 +16,14 @@ par(ask=FALSE)
 }
 
 else{
-if(is.null(level) & !is.null(n.cluster)){
+if(is.null(level) & !is.null(n.cluster)){  
  levels=hmacobj$level[which(hmacobj$n.cluster>=n.cluster)]
 
 #### Possibility of adjustment of number of clusters get from MG's code
  if(length(levels)==0){
    stop("Cannot find a level with ", n.cluster," clusters \n Choose the number of clusters between ",
         min(hmacobj$n.cluster), " and ", max(hmacobj$n.cluster))}
-
+ 
 else {
    level=max(levels)
 #   cat(level,hmacobj$n.cluster[level])
@@ -33,7 +33,7 @@ else {
      cat("There are no levels with exactly",n.cluster,"clusters\n")
      cat("The level at which there are",hmacobj$n.cluster[min(which(hmacobj$level==level))],"clusters is", level,"\n")
    }
-
+   
   }}
 
 if(level> max(hmacobj$level) ) stop ("Provide a level not greater than ", max(hmacobj$level))
@@ -52,17 +52,17 @@ m=dim(dat)[2];
 
   n.cluster=hmacobj$n.cluster[min(which(hmacobj$level==level))]
   member=hmacobj$membership[[level]]
-  postmat=matrix(0,n,n.cluster)
+  postmat=matrix(0,n,n.cluster)   
   sigma=hmacobj$sigmas[min(which(hmacobj$level==level))]; #select j-th bandwidth
-
+ 
   dens=matrix(0,n,n)
            for (i in 1:n)
                   dens[i,]=mydmvnorm(Data,Data[i,],sigma^2)
-
+ 
  post.prob=matrix(0,n,n.cluster)
-
+  
       for(j in 1:n.cluster) ### Un normalized
-           post.prob[,j]= apply(dens[,member==j,drop=FALSE],1,sum)
+           post.prob[,j]= apply(dens[,member==j,drop=FALSE],1,sum)       
    post.prob=post.prob/apply(post.prob,1,sum)
 
 
@@ -82,15 +82,15 @@ points(dat,col=mycol)
 
 
 if(nrow(boundary))
-legend("topleft",legend=paste("boundary points"),col="black",pch=16)
+legend("topleft",legend=paste("boundary points"),col="black",pch=16) 
 title("Soft clustering produced by HMAC \n Colors represent different clusters",cex.main=1)
 }
 
 	boundary=dat[apply(post.prob>boundlevel,1,sum)>1,]
 	output=list()
 	output[["post.prob"]]=post.prob
-	output[["boundary.point"]]=boundary
-
+	output[["boundary.point"]]=boundary 
+	
 if(plot==FALSE) return(output)
 }
 }
