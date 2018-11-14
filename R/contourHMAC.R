@@ -7,7 +7,7 @@ contour.hmac=function(x, n.cluster=NULL,level=NULL,prob=NULL,smoothplot=FALSE,..
 if(!dim(as.matrix(hmacobj$dat))[2]==2) stop("Contour plot not possible with more than two dimensions \n")
 
 
-  require(MASS)
+  requireNamespace("MASS",quietly = TRUE)
 if(is.null(level) & is.null(n.cluster)){
  stop("provide either the level or the number of clusters")}
 
@@ -50,12 +50,13 @@ mycols=rep("",length(member))
   	}
 
 
-d=kde2d(hmacobj$data[,1],hmacobj$data[,2])
+d=MASS::kde2d(hmacobj$data[,1],hmacobj$data[,2])
 
 if(is.null(prob)) contour(d, add=TRUE,...)
 else contour(d,level=prob,add=TRUE,...)
 title("Contour plot")
 
 }
+
 
 

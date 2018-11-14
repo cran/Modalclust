@@ -1,5 +1,4 @@
-# Default NAMESPACE created by R
-# Remove the previous line if you edit this file
+
 
 # Export all names
 exportPattern(".")
@@ -10,3 +9,13 @@ import(
   zoo,
   class
 )
+
+ importFrom("grDevices", "rainbow", "rgb")
+  importFrom("graphics", "axis", "contour", "legend", "lines", "locator",
+             "mtext", "par", "plot", "points", "smoothScatter", "title")
+  importFrom("stats", "density", "mahalanobis", "sd")
+
+  
+S3method(contour,hmac)
+S3method(plot,hmac)
+S3method(summary,hmac)

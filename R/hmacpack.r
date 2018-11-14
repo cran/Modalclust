@@ -111,9 +111,9 @@ if(.Platform$OS.type=="windows") {
         else cat("Performing initial Modal clustering")
         if(parallel){
         
-          if(require(parallel)){
+          if(requireNamespace("parallel", quietly = TRUE)){
             if(npart>1) cat("Using parallel computing for performing initial Modal clustering \n")
-            split.hmac <- mclapply(1:npart, function(x) hmac(data.split[[x]],Sigmas=Sigmas[1]), mc.cores=npart)
+            split.hmac <- parallel::mclapply(1:npart, function(x) hmac(data.split[[x]],Sigmas=Sigmas[1]), mc.cores=npart)
                       }
           else{
             cat("Use library parallel to run hmac in several processors ")  
